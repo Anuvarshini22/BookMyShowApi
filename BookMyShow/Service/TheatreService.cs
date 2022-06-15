@@ -28,7 +28,7 @@ namespace BookMyShow.Service
         }
         public bool InsertTheatre(Theatre theatre)
         {
-             return (_context.Execute("INSERT INTO Theatre(Name,Location)VALUES(@Name,@Location)", new { Name = theatre.Name, Location = theatre.Location }))==1;
+             return (_context.Execute("INSERT INTO Theatre(Name,Location,CreatedDate,UpdatedDate,DeletedDate,IsDeleted)VALUES(@Name,@Location,@CreatedDate,@UpdatedDate,@DeletedDate,@IsDeleted)", new { Name = theatre.Name, Location = theatre.Location , CreatedDate=theatre.CreatedDate, UpdatedDate=theatre.UpdatedDate, DeletedDate=theatre.DeletedDate, IsDeleted=theatre.IsDeleted }))==1;
              
            }
         public TheatreViewModel GetTheatreById(int id)

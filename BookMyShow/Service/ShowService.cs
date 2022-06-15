@@ -31,7 +31,7 @@ namespace BookMyShow.Service
                }
             public bool InsertShow(Show show)
             {
-                return (_context.Execute("INSERT INTO Show(Name,ShowTime,TheatreId,MovieId,Capacity)VALUES(@Name,@ShowTime,@TheatreId,@MovieId,@Capacity)", new { Name = show.Name, ShowTime = show.ShowTime,  TheatreId = show.TheatreId , MovieId=show.MovieId, Capacity=show.Capacity })==1);
+                return (_context.Execute("INSERT INTO Show(Name,ShowTime,TheatreId,MovieId,Capacity,CreatedDate,UpdatedDate,DeletedDate,IsDeleted)VALUES(@Name,@ShowTime,@TheatreId,@MovieId,@Capacity,@CreatedDate,@UpdatedDate,@DeletedDate,@IsDeleted)", new { Name = show.Name, ShowTime = show.ShowTime,  TheatreId = show.TheatreId , MovieId=show.MovieId, Capacity=show.Capacity, CreatedDate=show.CreatedDate, UpdatedDate=show.UpdatedDate, DeletedDate=show.DeletedDate, IsDeleted=show.IsDeleted })==1);
             }
         public ShowViewModel GetShowById(int id)
         {

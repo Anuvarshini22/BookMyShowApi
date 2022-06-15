@@ -27,7 +27,7 @@ namespace BookMyShow.Service
         }
         public bool InsertTicket(Ticket ticket)
         {
-            var affectedRowsCount = _context.Execute("INSERT INTO Ticket(UserName,NumberOfSeats,ShowTime,TheatreId,MovieId,CreatedDate,UpdatedDate,DeletedDate,IsDeleted)VALUES(@UserName,@NumberOfSeats,@ShowTime,@TheatreId,@MovieId,@CreatedDate,@UpdatedDate,@DeletedDate,@IsDeleted)", new { UserName = ticket.UserName, NumberOfSeats = ticket.NumberOfSeats, ShowTime = ticket.ShowTime, TheatreId = ticket.TheatreId, MovieId = ticket.MovieId,CreatedDate=ticket.CreatedDate,UpdatedDate=ticket.UpdatedDate,DeletedDate=ticket.DeletedDate,IsDeleted=ticket.IsDeleted});
+            var affectedRowsCount = _context.Execute("INSERT INTO Ticket(UserName,NumberOfSeats,ShowTime,TheatreId,MovieId)VALUES(@UserName,@NumberOfSeats,@ShowTime,@TheatreId,@MovieId)", new { UserName = ticket.UserName, NumberOfSeats = ticket.NumberOfSeats, ShowTime = ticket.ShowTime, TheatreId = ticket.TheatreId, MovieId = ticket.MovieId});
             if (affectedRowsCount == 1)
             {
                 return true;

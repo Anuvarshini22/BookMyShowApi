@@ -6,7 +6,7 @@ namespace BookMyShow.Entities
 {
     public class Seat
     {
-        public int Id { get; set; }
+        public int Id { get; set;} 
         public int Number { get; set; }
         public string ShowTime { get; set; }
         public int ShowId { get; set; }

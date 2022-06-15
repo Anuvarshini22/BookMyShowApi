@@ -34,7 +34,7 @@ namespace BookMyShow.Service
 
             public bool InsertMovie(Movie movie)
             {
-                    return (_context.Execute("INSERT INTO Movie(Title,Language,Genre,ImageUrl,Description,Price)VALUES(@Title,@Language,@Genre,@ImageUrl,@Description,@Price)", new { Title = movie.Title, Language = movie.Language, Genre = movie.Genre, ImageUrl=movie.ImageUrl, Description=movie.Description, Price=movie.price}))==1;
+                    return (_context.Execute("INSERT INTO Movie(Title,Language,Genre,ImageUrl,Description,Price,CreatedDate,UpdatedDate,DeletedDate,IsDeleted)VALUES(@Title,@Language,@Genre,@ImageUrl,@Description,@Price,@CreatedDate,@UpdatedDate,@DeletedDate,@IsDeleted)", new { Title = movie.Title, Language = movie.Language, Genre = movie.Genre, ImageUrl=movie.ImageUrl, Description=movie.Description, Price=movie.price, CreatedDate=movie.CreatedDate, UpdatedDate=movie.UpdatedDate, DeletedDate=movie.DeletedDate, IsDeleted=movie.IsDeleted }))==1;
             }
         public bool UpdateMovie(Movie movie)
         {
